@@ -10,90 +10,133 @@
 <body>
 	<div data-role=page id=home>
 		<div data-role=header>
-			<h1>Menu</h1>
+			<h1>TES</h1>
 		</div>
-		<select id="dynamic_select">
-			<option value="#win1">Kalkulator</option>
-			<option value="#win2">Warna RGB</option>
-			<option value="#win3">Rangkuman PPM</option>
-		</select>
-	</form>
-</div>
+		<div class="ui-field-contain">
+			<label for="select-native-1" style="margin: 5px">MENU :</label>
+			<select id="dynamic_select">
+				<option value="#win1">Kalkulator</option>
+				<option value="#win2">Warna RGB</option>
+				<option value="#win3">Rangkuman PPM</option>
+			</select>
+		</div>
+	</div>
 
-<div data-role=page id=win1>
-	<h3>Kalkulator</h3>
-
-</div>
-
-<div data-role=page id=win2>
-	<h3>Warna RGB</h3>
-	<!-- <form>
-		     <label for="text-1">Input warna:</label>
-		     <input class="color" type="text" name="text-1" id="text-1">
-		     <label for="text-3">Hasil:</label>
-		     <input class="color" type="text" name="text-3" id="text-3">
-	</form>
-	<button class="ui-btn">OK</button> -->
-	<form>
-	<input class="calc_input" type="text" name="start_date" id="text"/>
-	<input class="calc_input" type="text" name="start_date" id="text1"/>
-	</form>
-</div>
-
-
-<div data-role=page id=win3>
-	<h3>Rangkuman PPM</h3>
-	<p>Rangkuman<br>
-		1.	Git init : untuk menginisialisasi repository di .git<br>
-		2.	Git status : untuk mengetahui status<br>
-		3.	Git add namafile.txt: untuk menambahkan file baru ke Stagging Area<br>
-		4.	Git commit –m “teks” : menambahkan teks ke dalam file teks sebelumnya<br>
-		5.	Git commit –m ‘*…’ : berkomit di head,tapi belum repository jarak jauh<br>
-		6.	Git log : menampilkan daftar commit secara terurut<br>
-		7.	Git remote add origin <server> : untuk mengirimkan perubahan ke server yang di tuju<br>
-			8.	Git push –u origin master : untuk mengirimkan perubahan ke repo local di GitHub<br>
-			9.	Git pull origin master : di GitHub dapat mengundang orang lain untuk melakukan perubahan dan dapat mengembalikannya ke awal sebelum terjadi perubahan yang di lakukan.<br>
-			10.	Git diff Head : untuk melihat perubahan terakhir di folder<br>
-			11.	Git add <namafolder>/<namateks.txt> : untuk menambahkan file.txt ke folder<br>
-				12.	Git diff –staged : untuk melihat perubahan di area stage, yang nantinya akan masuk ke commit<br>
-				13.	Git reset <namafolder>/<namafile.txt> : menghapus file <br>
-					14.	Git checkout --namafile.txt : mengembalikan perintah terakhir<br>
-					15.	Git branch clean_up : untuk menghapus branch (cabang)<br>
-					16.	Git checkout clean_up : untuk menukar branch(antar cabang)<br>
-					17.	Git rm ‘*.txt’ : untuk menghapus file tidak hanya di disk, tetapi juga menghapus file di stage<br>
-					18.	Git commit –m “…” : meng-commit perubahan yang telah di lakukan<br>
-					19.	Git checkout master : menganti ke master branch dan meng-copy perubahan di clean
-					_up branch ke master branch<br>
-					20.	Git merge clean_up : untuk menggabungkan perubahan dari clean_uo branch ke master branch<br>
-					21.	Git branch –d clean_up : untuk menghapus branch clean_up<br>
-					22.	Git push : untuk mengirimkan semua perubahan ke remote repository<br>
-				</p>
+	<div data-role=page id=win1>
+		<h3 style="margin-left:15px">Kalkulator</h3>
+		<div class="calculator">
+			<p>FreeCodeCalc</p>
+			<div class="calc-row">
+				<div class="screen">0123456789</div>
 			</div>
 
+			<div class="calc-row">
+				<div class="button">C</div><div class="button">CE</div><div class="button backspace">back</div><div class="button plus-minus">+/-</div><div class="button">%</div>
+			</div>
 
-			<script>
-				$(function(){
-					$('#dynamic_select').on('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-				});
+			<div class="calc-row">
+				<div class="button">7</div><div class="button">8</div><div class="button">9</div><div class="button divice">/</div><div class="button root">sqrt</div>
+			</div>
+
+			<div class="calc-row">
+				<div class="button">4</div><div class="button">5</div><div class="button">6</div><div class="button multiply">*</div><div class="button inverse">1/x</div>
+			</div>
+
+			<div class="calc-row">
+				<div class="button">1</div><div class="button">2</div><div class="button">3</div><div class="button">-</div><div class="button pi">pi</div>
+			</div>
+
+			<div class="calc-row">
+				<div class="button zero">0</div><div class="button decimal">.</div><div class="button">+</div><div class="button equal">=</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role=page id=win2>
+		<h3 style="margin-left:15px">Warna RGB</h3>
+		<form>
+			<text>Input Warna:</text>
+			<input class="calc_input" type="text" name="start_date" id="text"/>
+			<input class="calc_input" type="text" name="start_date" id="text1"/>
+		</form>
+	</div>
+
+	<div data-role=page id=win3>
+		<button class="show-page-loading-msg" data-theme="a" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme a" data-inline="true">Loading Theme a</button>
+		<button class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme b" data-inline="true">Loading Theme b</button>
+		<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+		<h3 style="margin-left:15px">Rangkuman PPM</h3>
+		<ul data-role="listview">
+			<li>GitHub<br>
+				1.	Git init : untuk menginisialisasi repository di .git<br>
+				2.	Git status : untuk mengetahui status<br>
+				3.	Git add namafile.txt: untuk menambahkan file baru ke Stagging Area<br>
+				4.	Git commit –m “teks” : menambahkan teks ke dalam file teks sebelumnya<br>
+				5.	Git commit –m ‘*…’ : berkomit di head,tapi belum repository jarak jauh<br>
+				6.	Git log : menampilkan daftar commit secara terurut<br>
+				7.	Git remote add origin <server> : untuk mengirimkan perubahan ke server yang di tuju<br>
+					8.	Git push –u origin master : untuk mengirimkan perubahan ke repo local di GitHub<br>
+					9.	Git pull origin master : di GitHub dapat mengundang orang lain untuk melakukan perubahan dan dapat mengembalikannya ke awal sebelum terjadi perubahan yang di lakukan.<br>
+					10.	Git diff Head : untuk melihat perubahan terakhir di folder<br>
+					11.	Git add <namafolder>/<namateks.txt> : untuk menambahkan file.txt ke folder<br>
+						12.	Git diff –staged : untuk melihat perubahan di area stage, yang nantinya akan masuk ke commit<br>
+						13.	Git reset <namafolder>/<namafile.txt> : menghapus file <br>
+							14.	Git checkout --namafile.txt : mengembalikan perintah terakhir<br>
+							15.	Git branch clean_up : untuk menghapus branch (cabang)<br>
+							16.	Git checkout clean_up : untuk menukar branch(antar cabang)<br>
+							17.	Git rm ‘*.txt’ : untuk menghapus file tidak hanya di disk, tetapi juga menghapus file di stage<br>
+							18.	Git commit –m “…” : meng-commit perubahan yang telah di lakukan<br>
+							19.	Git checkout master : menganti ke master branch dan meng-copy perubahan di clean
+							_up branch ke master branch<br>
+							20.	Git merge clean_up : untuk menggabungkan perubahan dari clean_uo branch ke master branch<br>
+							21.	Git branch –d clean_up : untuk menghapus branch clean_up<br>
+							22.	Git push : untuk mengirimkan semua perubahan ke remote repository<br>
+						</li>
+						<li>Jquery<br>
+							JQuery Mobile adalah web framework yang dioptimalkan untuk perangkat-perangkat layar sentuh (touch-optimized)<br>
+							Fitu-Fitur JQuery Mobile:<br>
+							ListView Widget,Datepicker,Grids,Buttons,Forms,Filterable widget,dll.<br>
+						</li>
+					</ul>
+
+					<text style="margin-left:15px">Berapa % yang sudah saya pahami Matakuliah PPM?</text>
+					<form style="margin-left:15px">
+						<input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50">
+					</form>
+
+					<fieldset class="ui-grid-a" ui-responsive>
+						<div class="ui-block-a"><input type="submit" value="Submit" data-theme="a"></div>
+						<div class="ui-block-b"><input type="reset" value="Reset" data-theme="b"></div>
+					</fieldset>
+
+				</div>
 
 
-				$(document).ready(function() {
-			    $('input:text').focus(
-			    function(){
-			        $(text1).css({'background-color' : document.getElementById("text").value});
-			    });
+				<script>
+					$(function(){
+						$('#dynamic_select').on('change', function () {
+		          var url = $(this).val(); // get selected value
+		          if (url) { // require a URL
+		              window.location = url; // redirect
+		          }
+		          return false;
+		      });
+					});
 
-			    $('input:text').blur(
-			    function(){
-			        $(text1).css({'background-color' : document.getElementById("text").value});
-			    });
-			});
-			</script>
-</body>
-</html>
+
+					$(document).ready(function() {
+						$('input:text').focus(
+							function(){
+								$(text1).css({'background-color' : document.getElementById("text").value});
+							});
+
+						$('input:text').blur(
+							function(){
+								$(text1).css({'background-color' : document.getElementById("text").value});
+							});
+					});
+
+					
+				</script>
+			</body>
+			</html>
